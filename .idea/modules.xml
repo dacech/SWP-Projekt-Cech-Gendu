@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SWP-Projekt-Cech-Gendu.iml" filepath="$PROJECT_DIR$/.idea/SWP-Projekt-Cech-Gendu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SWP-Projekt-Cech-Gendu.iml" filepath="$PROJECT_DIR$/SWP-Projekt-Cech-Gendu.iml" />
     </modules>
   </component>
 </project>

@@ -4,8 +4,8 @@ import Enums.Type;
 public abstract class Vocab {
 
     private int         _vocab_id;
-    private Difficulty _vocab_dif;
-    private Type _vocab_type;
+    private Difficulty  _vocab_dif;
+    private Type        _vocab_type;
 
     private String      _vocab_ger;
     private String      _vocab_eng;
@@ -31,10 +31,10 @@ public abstract class Vocab {
 
     public Type get_vocab_type(){
         return this._vocab_type;
-}
+    }
     public void set_vocab_type(Type vocab_type){
         this._vocab_type = vocab_type;
-}
+    }
 
     public String get_vocab_ger(){
         return this._vocab_ger;
@@ -67,6 +67,6 @@ public abstract class Vocab {
     public String toString(){
         return  this._vocab_id  + " " + this._vocab_dif + " " + this._vocab_type+ " " +
                 this._vocab_ger + " " + this._vocab_eng + " ";
-     }
+    }
 
 }

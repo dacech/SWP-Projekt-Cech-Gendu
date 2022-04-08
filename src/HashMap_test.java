@@ -1,18 +1,22 @@
+import Enums.Difficulty;
+import Enums.Type;
+
+import java.sql.SQLOutput;
 import java.util.HashMap;
 
 public class HashMap_test {
-    HashMap<String, String> transger = new HashMap();
+    public static void main(String[] args) {
 
 
 
-    public static HashMap<String, String> createTranslations() {
-        //leere Hashmap erzeugen
-        HashMap<String, String> transger = new HashMap<>();
+        Vocab_Basic v1 = new Vocab_Basic(1, Difficulty.easy, Type.basic, "Baum", "tree");
 
-        //Elemente hinzufügen
-        transger.put("Hallo", "hello");
+        HashMap<String, String> transger = new HashMap();
+        transger.put(v1.get_vocab_ger(), v1.get_vocab_eng());
 
-        return transger;
+        System.out.println("Baum " + transger.get("Baum"));
+
 
     }
+
 }

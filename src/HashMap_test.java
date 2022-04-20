@@ -13,8 +13,12 @@ public class HashMap_test {
 
         HashMap<String, String> transger = new HashMap();
         transger.put(v1.get_vocab_ger(), v1.get_vocab_eng());
+        System.out.println(v1.get_vocab_ger()+ " | " + transger.get(v1.get_vocab_ger()));
 
-        System.out.println("Baum " + transger.get("Baum"));
+        HashMap<String, String> transeng = new HashMap();
+        transeng.put(v1.get_vocab_eng(),v1.get_vocab_ger());
+        System.out.println(v1.get_vocab_eng() + " | " + transeng.get(v1.get_vocab_eng()));
+
 
 
     }

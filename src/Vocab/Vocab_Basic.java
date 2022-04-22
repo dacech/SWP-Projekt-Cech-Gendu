@@ -1,7 +1,10 @@
+package Vocab;
+
 import Enums.Difficulty;
 import Enums.Type;
+import Vocab.Vocab;
 
-public class Vocab_Basic extends Vocab{
+public class Vocab_Basic extends Vocab {
 
     private String      _vocab_ger;
     private String      _vocab_eng;

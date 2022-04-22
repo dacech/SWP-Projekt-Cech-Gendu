@@ -1,3 +1,5 @@
+package Vocab;
+
 import Enums.Difficulty;
 import Enums.Type;
 

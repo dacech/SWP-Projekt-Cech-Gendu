@@ -3,7 +3,7 @@ package Vocab;
 import Enums.Difficulty;
 import Enums.Type;
 
-public abstract class Vocab {
+public class Vocab {
 
     private int         _vocab_id;
     private Difficulty  _vocab_dif;

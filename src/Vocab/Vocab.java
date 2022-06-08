@@ -3,8 +3,11 @@ package Vocab;
 import Enums.Difficulty;
 import Enums.Type;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Vocab {
 
+    private static final AtomicInteger count = new AtomicInteger(0);
     private int         _vocab_id;
     private Difficulty  _vocab_dif;
     private Type        _vocab_type;
@@ -42,7 +45,7 @@ public class Vocab {
 
     //ctors:
     public Vocab(){
-        this(0, Difficulty.notSpecified, Type.notSpecified);
+        this(count.incrementAndGet(), Difficulty.notSpecified, Type.notSpecified);
     }
     public  Vocab(int vocab_id, Difficulty vocab_dif, Type vocab_type){
         this.set_vocab_id(vocab_id);

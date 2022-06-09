@@ -12,8 +12,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+<<<<<<< HEAD:src/Models/Filemanagment.java
 public class Filemanagment {
     static String path = "C:\\Users\\Jonat\\OneDrive\\Desktop\\Schule\\3Klasse\\SWP\\repository\\SWP-Projekt-Cech-Gendu\\Vocabs_Egger_Daniel_202122 (1).csv";
+=======
+public class Filemanagement_test {
+    static String path = "C:\\Users\\David Cech\\Desktop\\HTL\\1BHWII\\SWP1\\repositories\\SWP-Projekt-Cech-Gendu\\Vocabs_Egger_Daniel_202122 (1).csv";
+>>>>>>> 123898d3112f926cb2587a0e64b752583241182a:src/Test/Filemanagement_test.java
 
     public static void main(String[] args) {
 
@@ -69,7 +74,20 @@ public class Filemanagment {
         return Vocabs;
     }
 
+    // public static Vocab_Basic ArrayToVocab_basic (String[] r){
+
+
+
+        
+   // }
+
+
+    public static HashMap<String,String> VocabToHashMap (List<Vocab_Basic> Vocab) {
+        return null;
+    }
+
     public static HashMap<String,String> VocabBasicToHashMap (List<Vocab_Basic> Vocab){
+
         HashMap<String,String> h = new HashMap<String,String>();
 
         for (Vocab_Basic v : Vocab){

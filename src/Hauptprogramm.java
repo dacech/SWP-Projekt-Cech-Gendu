@@ -86,19 +86,32 @@ public class Hauptprogramm {
                                 switch (choiseLoggedInMenu) {
                                     case 'v':
                                         int asked = 0;
+                                        int correct = 0;
                                         do {
 
                                             int Random = random.nextInt(list.size());
                                             String key = IdToKey(Random,list);
 
-                                            System.out.printf("Was ist %s auf Englisch",key);
+
+                                            String value = hash.get(key);
+
+                                            System.out.printf("Was ist ;%s auf Englisch\n",key);
                                             String guess = reader1.nextLine();
+                                            if (guess.equals(value)){
+                                                System.out.println("Richtig!");
+                                                correct= correct + 1;
+                                            }
+                                            else{
+                                                System.out.printf("Falsch %s\n",value);
+                                            }
+                                            asked++;
+                                            if (asked == 10){
+                                                correct = correct * 10;
+                                                System.out.printf("Sie haben %s Prozent richtig",correct);
+                                            }
 
 
-
-
-
-                                        }while (asked <= 10);
+                                        }while (asked < 10);
 
                                             break;
 

@@ -83,7 +83,7 @@ public class Filemanagment {
 
             for (Vocab_Basic v : Vocab) {
 
-                h.put(v.get_vocab_eng(), v.get_vocab_ger());
+                h.put(v.get_vocab_ger(), v.get_vocab_eng());
 
 
             }

@@ -1,4 +1,6 @@
 package Test;
+import Enums.Difficulty;
+import Enums.Type;
 import Vocab.*;
 
 import java.io.IOException;
@@ -12,13 +14,15 @@ public class Filemanagement_test {
     static String path = "C:\\Users\\Jonat\\OneDrive\\Desktop\\Schule\\3Klasse\\SWP\\repository\\SWP-Projekt-Cech-Gendu\\Vocabs_Egger_Daniel_202122 (1).csv";
 
     public static void main(String[] args) {
-        HashMap<String,String> hash = new HashMap<String,String>();
 
-        System.out.println(ReadFile(path));
-        for (int i = 0; i <= VocabToHashMap(ReadFile(path)).size(); i++){
 
-            System.out.println(hash.get(i));
+        //System.out.println(ReadFile(path));
+        HashMap<String,String> hash = VocabBasicToHashMap(ReadFile(path));
+
+        for(String value : hash.values()){
+            System.out.println(value);
         }
+
     }
 
     public static List<Vocab_Basic> ReadFile(String p){
@@ -28,21 +32,33 @@ public class Filemanagement_test {
 
         try {
             row = Files.readAllLines(path);
-
-            while (!row.isEmpty()){
                 for (String rows : row){
-                    String[] r = new String[1];
+                    if(rows.isEmpty()){
+                        continue;
+                    }
+
+                    //System.out.println(rows);
+                    String[] r = new String[2];
                      r = rows.split("-");
+
+                    //System.out.println(r[0]);
+                    //System.out.println(r[1]);
+
                     Vocab_Basic v = new Vocab_Basic();
 
 
                     v.set_vocab_eng(r[0]);
                     v.set_vocab_ger(r[1]);
 
+
+                    v.set_vocab_dif(Difficulty.easy);
+                    v.set_vocab_type(Type.basic);
+                    //System.out.println(v);
                     Vocabs.add(v);
 
                 }
-            }
+
+
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -50,13 +66,18 @@ public class Filemanagement_test {
         System.out.println(Vocabs);
         return Vocabs;
     }
-    //public static Vocab_Basic ArrayToVocab_basic (String[] r){
+
+    public static Vocab_Basic ArrayToVocab_basic (String[] r){
 
 
 
         
-    //}
+    }
     public static HashMap<String,String> VocabToHashMap (List<Vocab_Basic> Vocab){
+
+
+    public static HashMap<String,String> VocabBasicToHashMap (List<Vocab_Basic> Vocab){
+
         HashMap<String,String> h = new HashMap<String,String>();
 
         for (Vocab_Basic v : Vocab){
@@ -68,6 +89,12 @@ public class Filemanagement_test {
         return h;
 
     }
+
+    public static Vocab HashMapToVocab (HashMap<String,String> Hash){
+        Vocab v = new Vocab();
+                return v;
+    }
+
 
 
 

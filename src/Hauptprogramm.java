@@ -1,5 +1,12 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.*;
+
+import Translator.Translator;
 import UserDB.*;
 import Models.Filemanagment;
 import Vocab.*;
@@ -15,6 +22,11 @@ public class Hauptprogramm {
     private static Random random = new Random();
 
     static String path = "C:\\Users\\Jonat\\OneDrive\\Desktop\\Schule\\3Klasse\\SWP\\repository\\SWP-Projekt-Cech-Gendu\\Vocabs_Egger_Daniel_202122 (1).csv";
+
+    //Übersetzer
+    private static final String CLIENT_ID = "FREE_TRIAL_ACCOUNT";
+    private static final String CLIENT_SECRET = "PUBLIC_SECRET";
+    private static final String ENDPOINT = "http://api.whatsmate.net/v1/translation/translate";
 
     public static void main(String[] args) {
 
@@ -46,6 +58,7 @@ public class Hauptprogramm {
 
             char choiseStartMenu;
             char choiseLoggedInMenu;
+            char choiseTranslateMenu;
 
             System.out.print("\nWilkommen im Vokabeltrainer!\n");
 
@@ -114,8 +127,54 @@ public class Hauptprogramm {
                                         }while (asked < 10);
 
                                             break;
+                                    case 't':
+
+                                        do {
+                                            choiseTranslateMenu = translateMenu();
+                                            switch (choiseTranslateMenu) {
+
+                                                case 'd':
+                                                    System.out.println("Deutsch  - Englisch\n");
+                                                    String text1 = null;
+
+                                                    System.out.println("Zu übersetzendes Wort:");
+                                                    text1  = reader.next();
+                                                    if(text1 != null){
+                                                        Translator.translate("de","en" ,text1);
+
+                                                        System.out.print("\nWeiter? [w]");
+                                                        String cont = reader.next();
+                                                    }
+
+                                                    break;
+                                                case 'e':
+                                                    System.out.println("Englisch - Deutsch\n");
+                                                    String text2 = null;
+
+                                                    System.out.println("Zu übersetzendes Wort:");
+                                                    text2  = reader.next();
+                                                    if(text2 != null){
+                                                        Translator.translate("en","de" ,text2);
+
+                                                        System.out.print("\nWeiter? [w]");
+                                                        String cont = reader.next();
+                                                    }
+
+                                                    break;
+                                                case 'x':
+                                                    //nichts
+                                                    break;
+                                                default:
+                                                    System.out.println("Sie haben eine falsche Taste gedrückt!");
+                                                    break;
+
+                                            }
+                                        } while (choiseTranslateMenu != 'x');
 
 
+
+
+                                        break;
                                     case 'l':
                                         loggedInUser = null;
                                         System.out.println("Sie werden abgemeldet!");
@@ -201,7 +260,9 @@ public class Hauptprogramm {
             System.out.println("Datenbankfehler!");
             System.out.println(e.getMessage());
         }
-        finally{
+        catch (Exception e) {
+            e.printStackTrace();
+        } finally{
             try {
                 repU.close();
 
@@ -250,9 +311,24 @@ public class Hauptprogramm {
     public static char loggedInMenu() {
         System.out.println("\nDienste:");
         System.out.println("v ... Vokabeltrainer");
+        System.out.println("t ... Übersetzer");
         System.out.println("l ... logout");
         System.out.print("Ihre Wahl: ");
         return reader.next().toLowerCase().charAt(0);
     }
+<<<<<<< HEAD
+=======
+    public static char translateMenu(){
+        System.out.println("\nÜbersetzer:");
+        System.out.println("\nd ... Deutsch  - Englisch");
+        System.out.println("e ... Englisch - Deutsch");
+        System.out.println("x ... zurück");
+        System.out.print("Ihre Wahl: ");
+        return reader.next().toLowerCase().charAt(0);
+    }
+
+>>>>>>> 075c64dcb930baf77003b733ade0f5c8dfebc351
 
 }
+
+

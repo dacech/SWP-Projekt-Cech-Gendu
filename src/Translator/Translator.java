@@ -17,9 +17,10 @@ public class Translator {
 
     public static void main(String[] args) throws Exception {
         //Übersetzung hier definieren!
+
         String fromLang = "en";
         String toLang = "de";
-        String text = "Do you wanna fuck me?";
+        String text = "Hallo?";
 
         Translator.translate(fromLang, toLang, text);
     }
@@ -55,7 +56,8 @@ public class Translator {
         os.close();
 
         int statusCode = conn.getResponseCode();
-        System.out.println("Status Code: " + statusCode);
+
+        //System.out.println("Status Code: " + statusCode);
         BufferedReader br = new BufferedReader(new InputStreamReader(
                 (statusCode == 200) ? conn.getInputStream() : conn.getErrorStream()
         ));

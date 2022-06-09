@@ -65,7 +65,7 @@ public class Filemanagment {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            System.out.println(Vocabs);
+            //System.out.println(Vocabs);
             return Vocabs;
         }
 
@@ -75,9 +75,7 @@ public class Filemanagment {
         // }
 
 
-        public static HashMap<String, String> VocabToHashMap(List<Vocab_Basic> Vocab) {
-            return null;
-        }
+        //public static HashMap<String, String> VocabToHashMap(List<Vocab_Basic> Vocab) {return null; }
 
         public static HashMap<String, String> VocabBasicToHashMap(List<Vocab_Basic> Vocab) {
 
@@ -93,9 +91,19 @@ public class Filemanagment {
 
         }
 
-        public static Vocab HashMapToVocab(HashMap<String, String> Hash) {
-            Vocab v = new Vocab();
-            return v;
+        //public static Vocab HashMapToVocab(HashMap<String, String> Hash) { Vocab v = new Vocab();return v; }
+
+        public static String IdToKey (Integer Id , List<Vocab_Basic> Vocab){
+
+                for (Vocab_Basic v : Vocab) {
+
+                    if (Id == v.get_vocab_id()) {
+                        String key = v.get_vocab_ger();
+                        return key;
+                    }
+                }
+
+            return null;
         }
 
 

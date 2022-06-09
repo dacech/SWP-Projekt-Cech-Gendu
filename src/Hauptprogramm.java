@@ -1,12 +1,20 @@
 import java.sql.SQLException;
 import java.util.*;
 import UserDB.*;
+import Models.Filemanagment;
+import Vocab.*;
+import Enums.*;
 
 import javax.swing.*;
+
+import static Models.Filemanagment.*;
 
 public class Hauptprogramm {
 
     private static Scanner reader = new Scanner(System.in);
+    private static Random random = new Random();
+
+    static String path = "C:\\Users\\Jonat\\OneDrive\\Desktop\\Schule\\3Klasse\\SWP\\repository\\SWP-Projekt-Cech-Gendu\\Vocabs_Egger_Daniel_202122 (1).csv";
 
     public static void main(String[] args) {
 
@@ -70,14 +78,28 @@ public class Hauptprogramm {
                         if (repU.checkLoginData(username,password)) {
                             loggedInUser = username;
                             System.out.println("Login erfolgreich: "+ username);
+                            List<Vocab_Basic> list = ReadFile(path);
+                            HashMap<String, String> hash = VocabBasicToHashMap(list);
 
                             do {
                                 choiseLoggedInMenu = loggedInMenu();
                                 switch (choiseLoggedInMenu) {
                                     case 'v':
+                                        int asked = 0;
+                                        do {
 
-                                            //Noch nicht programmiert
-                                        System.out.println("NOCH NICHT PROGRAMMIERT!!");
+                                            int Random = random.nextInt(list.size());
+                                            String key = IdToKey(Random,list);
+
+                                            System.out.printf("Was ist %s auf Englisch",key);
+                                            String guess = reader1.nextLine();
+
+
+
+
+
+                                        }while (asked <= 10);
+
                                             break;
 
 
@@ -219,4 +241,5 @@ public class Hauptprogramm {
         System.out.print("Ihre Wahl: ");
         return reader.next().toLowerCase().charAt(0);
     }
+
 }

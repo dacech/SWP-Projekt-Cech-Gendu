@@ -50,12 +50,12 @@ public class Filemanagement_test {
         System.out.println(Vocabs);
         return Vocabs;
     }
-    public static Vocab_Basic ArrayToVocab_basic (String[] r){
+    //public static Vocab_Basic ArrayToVocab_basic (String[] r){
 
 
 
         
-    }
+    //}
     public static HashMap<String,String> VocabToHashMap (List<Vocab_Basic> Vocab){
         HashMap<String,String> h = new HashMap<String,String>();
 

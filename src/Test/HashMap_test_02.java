@@ -26,7 +26,7 @@ public class HashMap_test_02 {
         vocabs.add(v4);
         vocabs.add(v5);
 
-        
+
 
         /*
         HashMap<String, String> transger = new HashMap();

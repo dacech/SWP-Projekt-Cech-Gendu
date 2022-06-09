@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Filemanagement_test {
-    static String path = "C:\\Users\\Jonat\\OneDrive\\Desktop\\Schule\\3Klasse\\SWP\\repository\\SWP-Projekt-Cech-Gendu\\Vocabs_Egger_Daniel_202122 (1).csv";
+    static String path = "C:\\Users\\David Cech\\Desktop\\HTL\\1BHWII\\SWP1\\repositories\\SWP-Projekt-Cech-Gendu\\Vocabs_Egger_Daniel_202122 (1).csv";
 
     public static void main(String[] args) {
 
@@ -67,14 +67,17 @@ public class Filemanagement_test {
         return Vocabs;
     }
 
-    public static Vocab_Basic ArrayToVocab_basic (String[] r){
+    // public static Vocab_Basic ArrayToVocab_basic (String[] r){
 
 
 
         
-    }
-    public static HashMap<String,String> VocabToHashMap (List<Vocab_Basic> Vocab){
+   // }
 
+
+    public static HashMap<String,String> VocabToHashMap (List<Vocab_Basic> Vocab) {
+        return null;
+    }
 
     public static HashMap<String,String> VocabBasicToHashMap (List<Vocab_Basic> Vocab){
 

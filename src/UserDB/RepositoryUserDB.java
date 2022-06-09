@@ -6,7 +6,7 @@ public class RepositoryUserDB implements IRepositoryUser {
 
     private String url = "jdbc:mysql://localhost/user_db";
     private String user = "root";
-    private String pwd = "Sky39###";
+    private String pwd = "joniii999";
 
     private Connection _connection;
 

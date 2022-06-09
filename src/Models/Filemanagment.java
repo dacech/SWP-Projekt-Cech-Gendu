@@ -16,10 +16,6 @@ import java.util.List;
 public class Filemanagment {
     static String path = "C:\\Users\\Jonat\\OneDrive\\Desktop\\Schule\\3Klasse\\SWP\\repository\\SWP-Projekt-Cech-Gendu\\Vocabs_Egger_Daniel_202122 (1).csv";
 
-    public static class Filemanagement_test {
-        static String path = "C:\\Users\\David Cech\\Desktop\\HTL\\1BHWII\\SWP1\\repositories\\SWP-Projekt-Cech-Gendu\\Vocabs_Egger_Daniel_202122 (1).csv";
-
-
         public static void main(String[] args) {
 
 
@@ -104,5 +100,5 @@ public class Filemanagment {
 
 
     }
-}
+
 

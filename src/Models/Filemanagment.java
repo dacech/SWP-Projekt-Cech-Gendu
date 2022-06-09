@@ -1,7 +1,9 @@
-package Test;
+package Models;
+
 import Enums.Difficulty;
 import Enums.Type;
-import Vocab.*;
+import Vocab.Vocab;
+import Vocab.Vocab_Basic;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Filemanagement_test {
+public class Filemanagment {
     static String path = "C:\\Users\\Jonat\\OneDrive\\Desktop\\Schule\\3Klasse\\SWP\\repository\\SWP-Projekt-Cech-Gendu\\Vocabs_Egger_Daniel_202122 (1).csv";
 
     public static void main(String[] args) {
@@ -32,31 +34,31 @@ public class Filemanagement_test {
 
         try {
             row = Files.readAllLines(path);
-                for (String rows : row){
-                    if(rows.isEmpty()){
-                        continue;
-                    }
-
-                    //System.out.println(rows);
-                    String[] r = new String[2];
-                     r = rows.split("-");
-
-                    //System.out.println(r[0]);
-                    //System.out.println(r[1]);
-
-                    Vocab_Basic v = new Vocab_Basic();
-
-
-                    v.set_vocab_eng(r[0]);
-                    v.set_vocab_ger(r[1]);
-
-
-                    v.set_vocab_dif(Difficulty.easy);
-                    v.set_vocab_type(Type.basic);
-                    //System.out.println(v);
-                    Vocabs.add(v);
-
+            for (String rows : row){
+                if(rows.isEmpty()){
+                    continue;
                 }
+
+                //System.out.println(rows);
+                String[] r = new String[2];
+                r = rows.split("-");
+
+                //System.out.println(r[0]);
+                //System.out.println(r[1]);
+
+                Vocab_Basic v = new Vocab_Basic();
+
+
+                v.set_vocab_eng(r[0]);
+                v.set_vocab_ger(r[1]);
+
+
+                v.set_vocab_dif(Difficulty.easy);
+                v.set_vocab_type(Type.basic);
+                //System.out.println(v);
+                Vocabs.add(v);
+
+            }
 
 
         }
@@ -82,7 +84,7 @@ public class Filemanagement_test {
 
     public static Vocab HashMapToVocab (HashMap<String,String> Hash){
         Vocab v = new Vocab();
-                return v;
+        return v;
     }
 
 
@@ -91,4 +93,4 @@ public class Filemanagement_test {
 
 
 }
-//https://www.java-forum.org/thema/csv-file-zeilenweise-einlesen-was-bearbeiten-naechste-zeile.73432/
+

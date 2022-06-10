@@ -22,9 +22,9 @@ public class Hauptprogramm {
     private static Random random = new Random();
 
     //johny
-    static String path = "C:\\Users\\Jonat\\OneDrive\\Desktop\\Schule\\3Klasse\\SWP\\repository\\SWP-Projekt-Cech-Gendu\\Vocabs_Egger_Daniel_202122 (1).csv";
+    //static String path = "C:\\Users\\Jonat\\OneDrive\\Desktop\\Schule\\3Klasse\\SWP\\repository\\SWP-Projekt-Cech-Gendu\\Vocab.csv";
     //cech
-    //static String path = "C:\\Users\\David Cech\\Desktop\\HTL\\1BHWII\\SWP1\\repositories\\SWP-Projekt-Cech-Gendu\\Vocabs_Egger_Daniel_202122 (1).csv";
+    static String path = "C:\\Users\\David Cech\\Desktop\\HTL\\1BHWII\\SWP1\\repositories\\SWP-Projekt-Cech-Gendu\\Vocab.csv";
 
 
 
@@ -65,7 +65,7 @@ public class Hauptprogramm {
             char choiseLoggedInMenu;
             char choiseTranslateMenu;
 
-            System.out.print("\nWilkommen im Vokabeltrainer!\n");
+            System.out.print("\nWilkommen im LanguageHelper!\n");
 
             do {
                 choiseStartMenu = startMenu();
@@ -73,7 +73,7 @@ public class Hauptprogramm {
 
                     case 'l':
 
-                        System.out.println("Benutzername:");
+                        System.out.println("\nBenutzername:");
                         username = reader1.nextLine();
 
                         System.out.println("Password:");
@@ -105,6 +105,8 @@ public class Hauptprogramm {
                                     case 'v':
                                         int asked = 0;
                                         int correct = 0;
+                                        System.out.println("Vokabeltrainer:\n\n");
+                                        System.out.println("Sie werden jetzt 10 Vokabeln aus ihrer Liste [Vocab.csv] gefragt.\n[Deutsch - Englisch]\n\n");
                                         do {
 
                                             int Random = random.nextInt(list.size());
@@ -113,19 +115,20 @@ public class Hauptprogramm {
 
                                             String value = hash.get(key);
 
-                                            System.out.printf("Was ist ;%s auf Englisch\n",key);
+                                            System.out.printf("Was ist ;%s auf Englisch?\n",key);
                                             String guess = reader1.nextLine();
                                             if (guess.equals(value)){
-                                                System.out.println("Richtig!");
+                                                System.out.println("Richtig!\n");
                                                 correct= correct + 1;
                                             }
                                             else{
-                                                System.out.printf("Falsch %s\n",value);
+                                                System.out.printf("Falsch! Richtig wäre: %s",value);
+                                                System.out.println("\n");
                                             }
                                             asked++;
                                             if (asked == 10){
                                                 correct = correct * 10;
-                                                System.out.printf("Sie haben %s Prozent richtig",correct);
+                                                System.out.printf("Sie haben %s Prozent richtig!\n",correct);
                                             }
 
 
@@ -323,10 +326,10 @@ public class Hauptprogramm {
     }
 
     public static char translateMenu(){
-        System.out.println("\nÜbersetzer:");
+        System.out.println("\nÜbersetzer:\n");
         System.out.println("\nd ... Deutsch  - Englisch");
-        System.out.println("e ... Englisch - Deutsch");
-        System.out.println("x ... zurück");
+        System.out.println("e ... Englisch - Deutsch\n");
+        System.out.println("x ... zurück\n");
         System.out.print("Ihre Wahl: ");
         return reader.next().toLowerCase().charAt(0);
     }

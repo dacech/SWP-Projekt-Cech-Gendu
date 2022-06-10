@@ -8,9 +8,9 @@ public class RepositoryUserDB implements IRepositoryUser {
     private String user = "root";
 
     //Johny
-    private String pwd = "joniii999";
+    //private String pwd = "joniii999";
     //Cech
-    //private String pwd = "Sky39###";
+    private String pwd = "Sky39###";
 
     private Connection _connection;
 

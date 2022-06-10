@@ -21,7 +21,12 @@ public class Hauptprogramm {
     private static Scanner reader = new Scanner(System.in);
     private static Random random = new Random();
 
+    //johny
     static String path = "C:\\Users\\Jonat\\OneDrive\\Desktop\\Schule\\3Klasse\\SWP\\repository\\SWP-Projekt-Cech-Gendu\\Vocabs_Egger_Daniel_202122 (1).csv";
+    //cech
+    //static String path = "C:\\Users\\David Cech\\Desktop\\HTL\\1BHWII\\SWP1\\repositories\\SWP-Projekt-Cech-Gendu\\Vocabs_Egger_Daniel_202122 (1).csv";
+
+
 
     //Übersetzer
     private static final String CLIENT_ID = "FREE_TRIAL_ACCOUNT";
@@ -316,8 +321,7 @@ public class Hauptprogramm {
         System.out.print("Ihre Wahl: ");
         return reader.next().toLowerCase().charAt(0);
     }
-<<<<<<< HEAD
-=======
+
     public static char translateMenu(){
         System.out.println("\nÜbersetzer:");
         System.out.println("\nd ... Deutsch  - Englisch");
@@ -327,7 +331,7 @@ public class Hauptprogramm {
         return reader.next().toLowerCase().charAt(0);
     }
 
->>>>>>> 075c64dcb930baf77003b733ade0f5c8dfebc351
+
 
 }
 
